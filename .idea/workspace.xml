@@ -868,7 +868,7 @@
       <workItem from="1497180084025" duration="550000" />
       <workItem from="1497181164062" duration="5704000" />
       <workItem from="1497256497930" duration="12000" />
-      <workItem from="1497350454459" duration="9795000" />
+      <workItem from="1497350454459" duration="9911000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1497186961520</created>
@@ -905,7 +905,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497356205783</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="AIO初体验">
+      <created>1497364900836</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1497364900836</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -941,7 +948,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109087000" />
+    <option name="totallyTimeSpent" value="109203000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
