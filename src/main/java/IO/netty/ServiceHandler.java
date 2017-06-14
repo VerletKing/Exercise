@@ -2,6 +2,7 @@ package IO.netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
@@ -19,7 +20,10 @@ public class ServiceHandler extends ChannelHandlerAdapter {
 
         //写给客户端
         String response = "我是反馈的信息";
-        ctx.writeAndFlush(Unpooled.copiedBuffer((response + "888").getBytes()));
+        //当执行write时会释放msg，不需要ReferenceCountUtil.release(msg);
+        ctx.writeAndFlush(Unpooled.copiedBuffer((response + "888").getBytes()))
+                //数据写入完毕，关闭客户端
+                .addListener(ChannelFutureListener.CLOSE);
     }
 
     @Override

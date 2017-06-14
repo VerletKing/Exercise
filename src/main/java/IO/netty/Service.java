@@ -39,7 +39,9 @@ public class Service {
                             socketChannel.pipeline().addLast(new ServiceHandler());
                         }
                     })
+                    //设置tcp缓存区
                     .option(ChannelOption.SO_BACKLOG, 128)
+                    //保持连接
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
             //绑定指定的端口 进行监听
