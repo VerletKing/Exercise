@@ -13,9 +13,9 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * Created by Try on 2017/6/14.
  */
 public class Service {
-    private int port;
+    private int[] port;
 
-    public Service(int port) {
+    public Service(int... port) {
         this.port = port;
     }
 
@@ -41,12 +41,22 @@ public class Service {
                     })
                     //设置tcp缓存区
                     .option(ChannelOption.SO_BACKLOG, 128)
+                    //设置发送缓存大小
+                    .option(ChannelOption.SO_SNDBUF,32*1024)
+                    //设置接收缓存大小
+                    .option(ChannelOption.SO_RCVBUF,32*1024)
                     //保持连接
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
+            ChannelFuture[] cfs = new ChannelFuture[port.length];
             //绑定指定的端口 进行监听
-            ChannelFuture f = bootstrap.bind(port).sync();
-            f.channel().closeFuture().sync();
+            for (int i = 0; i < port.length; i++) {
+                cfs[i] = bootstrap.bind(port[i]).sync();
+            }
+            //ChannelFuture f = bootstrap.bind(port).sync();
+            for (int i = 0; i < cfs.length; i++) {
+                cfs[i].channel().closeFuture().sync();
+            }
         } finally {
             workerGroup.shutdownGracefully();
             boossGroup.shutdownGracefully();
@@ -54,6 +64,6 @@ public class Service {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new Service(5200).run();
+        new Service(5200,5201,5202).run();
     }
 }
