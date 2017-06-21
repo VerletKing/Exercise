@@ -20,7 +20,7 @@ public class ServiceHandler extends ChannelHandlerAdapter {
 
         String response = "这是服务器端返回数据" + "$_";
         ChannelFuture channelFuture = ctx.writeAndFlush(Unpooled.copiedBuffer(response.getBytes()));
-        channelFuture.addListener(ChannelFutureListener.CLOSE);
+        //channelFuture.addListener(ChannelFutureListener.CLOSE);
 
     }
 

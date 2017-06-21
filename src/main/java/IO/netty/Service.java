@@ -50,13 +50,14 @@ public class Service {
 
             ChannelFuture[] cfs = new ChannelFuture[port.length];
             //绑定指定的端口 进行监听
-            for (int i = 0; i < port.length; i++) {
+            ChannelFuture f = bootstrap.bind(port[0]).sync();
+            f.channel().closeFuture().sync();
+            /*for (int i = 0; i < port.length; i++) {
                 cfs[i] = bootstrap.bind(port[i]).sync();
-            }
-            //ChannelFuture f = bootstrap.bind(port).sync();
-            for (int i = 0; i < cfs.length; i++) {
+            }*/
+            /*for (int i = 0; i < cfs.length; i++) {
                 cfs[i].channel().closeFuture().sync();
-            }
+            }*/
         } finally {
             workerGroup.shutdownGracefully();
             boossGroup.shutdownGracefully();
@@ -64,6 +65,6 @@ public class Service {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new Service(5200,5201,5202).run();
+        new Service(5200).run();
     }
 }

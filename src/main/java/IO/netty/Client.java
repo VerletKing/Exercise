@@ -25,15 +25,15 @@ public class Client {
                 });
 
         ChannelFuture cf = bootstrap.connect("127.0.0.1", 5200).sync();
-        ChannelFuture cf02 = bootstrap.connect("127.0.0.1", 5201).sync();
-        ChannelFuture cf03 = bootstrap.connect("127.0.0.1", 5202).sync();
+        /*ChannelFuture cf02 = bootstrap.connect("127.0.0.1", 5201).sync();
+        ChannelFuture cf03 = bootstrap.connect("127.0.0.1", 5202).sync();*/
         cf.channel().writeAndFlush(Unpooled.copiedBuffer("7778".getBytes()));
-        cf02.channel().writeAndFlush(Unpooled.copiedBuffer("8888".getBytes()));
-        cf03.channel().writeAndFlush(Unpooled.copiedBuffer("9999".getBytes()));
+        /*cf02.channel().writeAndFlush(Unpooled.copiedBuffer("8888".getBytes()));
+        cf03.channel().writeAndFlush(Unpooled.copiedBuffer("9999".getBytes()));*/
 
         cf.channel().closeFuture().sync();
-        cf02.channel().closeFuture().sync();
-        cf03.channel().closeFuture().sync();
+        /*cf02.channel().closeFuture().sync();
+        cf03.channel().closeFuture().sync();*/
         workgroup.shutdownGracefully();
     }
 }
