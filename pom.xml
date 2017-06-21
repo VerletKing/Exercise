@@ -63,5 +63,11 @@
             <artifactId>jboss-marshalling-serial</artifactId>
             <version>1.4.11.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.fusesource</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
     </dependencies>
 </project>
