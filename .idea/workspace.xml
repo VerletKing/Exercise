@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cb7cb02-32c5-4373-ae7b-06c6d879e3d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_all_5_14_5.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/thread/UseCondition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/thread/UseThreadPoolExecutor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/thread/UseReentrantReadWriteLock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exercise.iml" afterPath="$PROJECT_DIR$/Exercise.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UseCondition.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UseCondition.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/thread/UseCondition.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -51,6 +48,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UseReentrantReadWriteLock.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/thread/UseReentrantReadWriteLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/IO/netty/serial/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/IO/netty/serial/ServerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/IO/netty/Serial/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/IO/netty/Serial/ClientHandler.java" />
@@ -145,6 +151,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/thread/UseThreadPoolExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/java/thread/UseCondition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/thread/UseReentrantReadWriteLock.java" />
       </list>
     </option>
   </component>
@@ -992,7 +999,7 @@
       <workItem from="1498923327462" duration="1677000" />
       <workItem from="1498925461415" duration="3178000" />
       <workItem from="1498968558825" duration="2493000" />
-      <workItem from="1498992676402" duration="69000" />
+      <workItem from="1498992676402" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1497186961520</created>
@@ -1127,7 +1134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498724947064</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="使用自定义线程池">
+      <created>1498992797150</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1498992797150</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1163,7 +1177,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241520000" />
+    <option name="totallyTimeSpent" value="242439000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1297,7 +1311,8 @@
     <MESSAGE value="netty http体验及其官方Demo上传下载" />
     <MESSAGE value="少量更改" />
     <MESSAGE value="java操作redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="java操作redis" />
+    <MESSAGE value="使用自定义线程池" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用自定义线程池" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1309,7 +1324,7 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="35" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1318,13 +1333,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/mvn_repo/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/ShardedJedisPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="54" column="23" lean-forward="true" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/mvn_repo/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/util/Pool.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -1681,6 +1689,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/thread/UseReentrantReadWriteLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
