@@ -35,7 +35,11 @@ public class LongEventMain {
         //启动
         disruptor.start();
 
-        //Disruptor 的事件发布过程是一个两阶段提交的过程：
+        /*Disruptor 的事件发布过程是一个两阶段提交的过程：
+            第一步：先从 RingBuffer 获取下一个可以写入的事件的序号；
+            第二步：获取对应的事件对象，将数据写入事件对象；
+            第三部：将事件提交到 RingBuffer;
+          事件只有在提交之后才会通知 EventProcessor 进行处理；*/
         //发布事件
         RingBuffer<LongEvent> ringBuffer = disruptor.getRingBuffer();
 
