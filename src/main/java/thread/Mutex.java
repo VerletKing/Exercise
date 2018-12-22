@@ -77,7 +77,7 @@ public class Mutex implements Lock {
 
     @Override
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
-        return sync.tryAcquireNanos(1,unit.toNanos(timeout));
+        return sync.tryAcquireNanos(1, unit.toNanos(timeout));
     }
 
     @Override
@@ -90,11 +90,11 @@ public class Mutex implements Lock {
         return sync.newCondition();
     }
 
-    public boolean isLocked(){
+    public boolean isLocked() {
         return sync.isHeldExclusively();
     }
 
-    public boolean hasQueuedThreads(){
+    public boolean hasQueuedThreads() {
         return sync.hasQueuedThreads();
     }
 
