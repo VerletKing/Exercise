@@ -15,7 +15,7 @@ public class Mutex implements Lock {
     /**
      * 静态内部类，自定义同步器
      */
-    private static class Sync extends AbstractQueuedSynchronizer {
+    static class Sync extends AbstractQueuedSynchronizer {
         /**
          * 是否处于占用状态
          */
